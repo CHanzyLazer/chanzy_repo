@@ -3,7 +3,7 @@ package("chanzy_container")
     set_description("The chanzy_container package")
     set_license("MIT")
 
-    add_urls("https://github.com/CHanzyLazer/chanzy_container.git main")
+    add_urls("https://github.com/CHanzyLazer/chanzy_container.git")
 
     on_install(function (package)
         local configs = {}
