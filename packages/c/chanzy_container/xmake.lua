@@ -5,12 +5,11 @@ package("chanzy_container")
 
     add_urls("https://github.com/CHanzyLazer/chanzy_container.git")
 
+    -- install this handeronly package manually to avoid some unexpected bugs
     on_install(function (package)
-        local configs = {}
-        if package:config("shared") then
-            configs.kind = "shared"
-        end
-        import("package.tools.xmake").install(package, configs)
+        os.mkdir(package:installdir("include/chanzy"))
+        os.cp("**.h", package:installdir("include/chanzy"))
+        os.cp("**.hpp", package:installdir("include/chanzy"))
     end)
 
     on_test(function (package)
