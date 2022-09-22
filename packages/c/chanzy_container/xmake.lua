@@ -7,9 +7,9 @@ package("chanzy_container")
 
     -- install this handeronly package manually to avoid some unexpected bugs
     on_install(function (package)
-        os.mkdir(package:installdir("include/chanzy"))
-        os.cp("**.h", package:installdir("include/chanzy"))
-        os.cp("**.hpp", package:installdir("include/chanzy"))
+        os.mkdir(path.join(package:installdir("include"), "chanzy"))
+        os.cp("**.h", path.join(package:installdir("include"), "chanzy"))
+        os.cp("**.hpp", path.join(package:installdir("include"), "chanzy"))
     end)
 
     on_test(function (package)
